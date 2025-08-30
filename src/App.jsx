@@ -1,28 +1,28 @@
-import { useState } from 'react'
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Services from "./components/Services";
+import BookingSection from "./components/BookingSection";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-rose-50 via-sky-50 to-emerald-50 text-slate-800">
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <BookingSection />
+      </main>
+      <footer className="mt-20 border-t border-white/60 bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <div className="mx-auto max-w-7xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-slate-600">© {new Date().getFullYear()} Paws & Play — Brooklyn, NY</p>
+          <div className="text-sm text-slate-600">
+            123 Atlantic Ave, Brooklyn • Open Mon–Sat 7:00a–7:00p
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
